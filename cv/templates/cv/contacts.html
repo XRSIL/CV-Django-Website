@@ -1,0 +1,41 @@
+{% extends 'cv/base.html' %}
+{% load crispy_forms_filters %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="col-12 pt-5">
+        <div class="text-center pt-4 pb-4 fw-bold fs-4">Связаться со мной</div>
+        <div class="row flex-column flex-xl-row">
+            <div class="col-xl-3 white-block p-4 text-center">
+                <div style="font-size: 20px; font-weight: 500; color: #c29d6a;">Контактная информация</div>
+                <div class="fw-bold mt-3">Адрес</div>
+                <div class="fw-light mt-1">119571, г. Москва, Ленинский проспект, д. 156</div>
+                <div class="fw-bold mt-3">Телефон:</div>
+                <div class="fw-light mt-1">+7 (916) 217-10-07</div>
+                <div class="fw-bold mt-4">Email</div>
+                <div class="fw-light mt-1">xrsilya@gmail.com</div>
+            </div>
+            <div class="col-xl-9 p-0 pt-4 pt-xl-0 ps-xl-4">
+                <div class="bordered-block h-100 px-5 py-4">
+                    <div class="fs-4 fw-light">Отправить сообщение</div>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="row mt-4 justify-content-between" style="color: #8e8e8e">
+                            <div class="col-xl-5">
+                                <div class="my-3">{{ form.name|as_crispy_field }}</div>
+                                <div class="my-3">{{ form.company|as_crispy_field }}</div>
+                                <div class="my-3">{{ form.email|as_crispy_field }}</div>
+                            </div>
+                            <div class="col-xl-6 d-flex flex-column justify-content-between">
+                                <div class="my-3">{{ form.message|as_crispy_field }}</div>
+                                <div class="d-flex flex-row-reverse">
+                                    <button class="send-button mt-2 fw-bold fs-5 px-4 py-2" type="submit">Отправить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

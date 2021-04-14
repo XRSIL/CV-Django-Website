@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content-type="text/html" charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'cv/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'cv/css/main.css' %}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Илья Крючков</title>
+    {% endif %}
+</head>
+<body>
+    <div class="col-lg-9 m-0 m-auto">
+
+        <div class="jumbotron jumbotron-fluid mt-5 mt-sm-0" >
+              <div class="container pt-3" style="text-align: center;">
+                  <div style="font-weight: bold;">Крючков Илья</div>
+                  <div style="font-weight: lighter; font-size: 25px;">Python Backend Developer</div>
+              </div>
+        </div>
+         <header>
+            <nav class="nav-my header-style mt-sm-5">
+                <div class="navbar-my w-100 d-flex flex-row-reverse" style="margin-left: 10px;">
+                    <ul class="navbar_my m-auto d-none d-sm-flex" style="width: 375px; line-height:38px; left:0; ">
+                        <li class="nav_item nav-style">
+                            <a href="/" class="navigation_bar"><span class="navigation_bar">Обо мне</span></a>
+                        </li>
+                        <li class="nav_item nav-style">
+                            <a href="/resume" class="navigation_bar"><span class="navigation_bar">Резюме</span></a>
+                        </li>
+                        <li class="nav_item nav-style">
+                            <a href="/contacts" class="navigation_bar"><span class="navigation_bar">Контакты</span></a>
+                        </li>
+                    </ul>
+                    <div class="m-auto d-sm-none" style="padding-right: 14px; color: #d2d2d2; font-size: 20px">{{ title }}</div>
+                </div>
+
+                <div class="burger-icon">
+                    <section style="position: relative;">
+                        <svg viewBox="0 0 100 80" width="23" height="54">
+                            <rect width="100" height="16" rx="4"></rect>
+                            <rect y="33" width="100" height="16" rx="4"></rect>
+                            <rect y="66" width="100" height="16" rx="4"></rect>
+                        </svg>
+                    </section>
+                    <button onclick="myFunction()" id="toggler_btn" class="toggler_btn" style="position: absolute; top: 0; height: 23px; width: 23px; top: 50%; transform: translateY(-50%); border: none; background: none; background-color: transparent; z-index: 1000;">
+                    </button>
+
+                </div>
+            </nav>
+
+            <div class="nav_toggle" id="nav_toggle">
+                <ul class="nav_toggle_list">
+                    <li class="toggle_item nav-style">
+                        <a href="/" class="navigation_bar"><span class="navigation_bar">Обо мне</span></a>
+                    </li>
+                    <li class="toggle_item nav-style">
+                        <a href="/resume" class="navigation_bar"><span class="navigation_bar">Резюме</span></a>
+                    </li>
+                    <li class="toggle_item nav-style">
+                        <a href="/contacts" class="navigation_bar"><span class="navigation_bar">Контакты</span></a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+	<div style="position: fixed; top: -234px; right: 30px; height: 288px; width: 175px; z-index: 985; background-color: #f9f9f9;"></div>
+        <div class="col-12">
+            <div class="container px-4">
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- Google Maps -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBObTMNihoZvy37bGlWbv55ma5x6vcWoS0&callback=initMap&libraries=&v=weekly" async></script>-->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{% static 'cv/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'cv/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+body {
+    color: #210e00;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    padding-bottom: 100px;
+	padding-top: 54px;
+	min-width: 320px;
+}
+
+.jumbotron div{
+    font-size: 30px;
+}
+
+
+.white-block {
+    background-color: #ffffff;
+}
+
+.bordered-block {
+    border: solid #e5e5e5 5px;
+}
+
+.resume {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.resume-block {
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.resume-block-title {
+    color: #c29d6a;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.resume-block-company a{
+    color: #9a9a9a;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.resume-block-company a:hover{
+    color: #c4a986;
+}
+
+.resume-block-period {
+    color: #210e00;
+    font-size: 19px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.resume-block-content {
+    color: #8d8d8d;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+}
+
+.resume-education-title a{
+    color: #c29d6a;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.resume-education-title a:hover{
+    color: #c4a986;
+}
+
+.resume-education-faculty{
+    color: #9a9a9a;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.wrap {
+    overflow-wrap: break-word;
+}
+
+
+
+.send-button {
+    color: #d0a971;
+    background-color: transparent;
+    border-radius: 30px;
+    border: solid 4px #deba8d;
+    transition: 300ms;
+}
+
+.send-button:hover{
+    color: #f9f9f9;
+    background-color: #e5c087;
+    border-radius: 30px;
+    border: solid 4px #e5c087;
+}
+
+.asteriskField {
+    display: none;
+}
+
+#div_id_message textarea{
+    max-height: 150px;
+}
+
+.header-style {
+	height: 54px;
+	width: 100%;
+	background: #13171B;
+	left: 0;
+	top: 0;
+	z-index: 990;
+}
+
+.nav-my {
+	display: flex;
+}
+
+.navbar-my {
+
+	display: block;
+	position: relative;
+	width: 510px;
+	height: 54px;
+
+}
+
+.navbar_my {
+	padding:0;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.navigation_bar {
+	font-family: 'montserrat-regular', sans-serif;
+	font-size: 11px;
+	font-weight: 400;
+	text-transform: uppercase;
+	color: #b3b8c7;
+	transition: 0.2s;
+	text-decoration: none;
+}
+
+.burger-icon {
+	display: block;
+	position: absolute;
+	right:33px;
+	fill: white;
+
+}
+
+.img-responsive {
+	max-width: 50%;
+	height: auto;
+	display: block;
+}
+
+.nav_item {
+	height:54px;
+	line-height: 54px;
+	letter-spacing: 1.75px;
+	width: auto;
+	padding: 0;
+}
+
+.navigation_bar:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.nav-style {
+	position: relative;
+	list-style: none;
+
+}
+
+.nav_toggle {
+	padding: 24px 36px 48px 36px;
+	background: #1D2025;
+	transform: translate(0, -288px);
+	display: block;
+	width: auto;
+	position: fixed;
+	top: 0;
+	right: 30px;
+	top: 54px;
+	letter-spacing: 1.75px;
+	transition-duration: 300ms;
+	transition-property: transform;
+	z-index: 980;
+
+}
+
+.nav_toggle_list {
+	padding: 0;
+	position: relative;
+	display: block;
+}
+
+.toggle_item {
+	height: 40px;
+	width: 103px;
+	padding-top: 12px;
+	border-bottom: 1px solid #2D2E34;
+	border-bottom-style: dotted;
+}
+
+#toggler_my {
+	display: none;
+}
+
+.show {
+	margin-top:0px;
+	transform: translate(0, 0);
+	transition-duration: 300ms;
+	transition-property: transform;
+}
+
+.hide {
+	transform: translate(0, -288px);
+}
+
+#div_id_name label{
+	content: "Имя";
+}
+
+
+@media (max-width: 576px){
+	.navigation_bar{font-size: 12px;}
+	.navbar-my{display: none;}
+	.nav-my{position: fixed}
+}
+
+
+@media (min-width: 576px){
+	.navigation_bar{
+		font-size: 12px;
+		font-weight: bold;
+		color: #9a9a9a;
+	}
+	.navigation_bar:hover{
+		color: #c29d6a;
+	}
+	.navbar-my{width: 478px;}
+	.burger-icon{display: none;}
+	.nav_toggle{display: none!important;}
+	.nav-my{position: relative}
+	.header-style{
+		background: #f9f9f9;
+		border-bottom: 1px solid #e5e5e5;
+	}
+}
+
+@media (min-width: 768px){
+	.navigation_bar{font-size: 12px;}
+	.navbar-my{width: 510px;}
+	.burger-icon{display: none;}
+	.nav_toggle{display: none!important;}
+	.nav-my{position: relative}
+}
+

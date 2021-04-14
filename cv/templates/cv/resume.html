@@ -1,0 +1,110 @@
+{% extends 'cv/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row bordered-block mt-5 mb-3 pt-4 pb-3 ml-1">
+        <div class="col-12 resume">
+            Резюме
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9 px-0 pe-lg-3">
+            <div class="col-12 bordered-block">
+
+                <div class="row pt-5 mb-5 ps-5 text-start pe-2 resume-block">
+                    <div class="wrap" style="letter-spacing: 2px; width: auto">Опыт</div>
+                    <div class="pt-2 pt-sm-0" style="width: 75%;">
+                        <div style="width: 100%; height: 55%; border-bottom: #e2e2e2 solid 2px"></div>
+                    </div>
+                </div>
+                {% for job in jobs %}
+                    <div class="row d-flex mb-5 pe-4 resume-block">
+                        <div class="row">
+                            <div class="col-2 bottom-100">
+                                <div class="m-auto d-none d-sm-block" style="width:30px; height: 30px; border: #c29d6a solid 6px;"></div>
+                            </div>
+                            <div class="col-10">
+                                <div style="line-height: 100%; letter-spacing: 1px;" class="resume-block-title">{{ job.title }}</div>
+                                {% if job.website != '/' %}
+                                    <div class="resume-block-company mt-2 text-start"><a class="text-decoration-none" href="{{ job.website }}" target="_blank">{{ job.company }}</a></div>
+                                {% else %}
+                                    <div class="resume-block-company mt-2 text-start" style="color: #9a9a9a; font-size: 22px; font-weight: 500;">{{ job.company }}</div>
+                                {% endif %}
+                                <div class="resume-block-period mt-2">{{ job.period }}</div>
+                                <div class="resume-block-content mt-3">{{ job.content }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="row pt-5 mb-5 ps-5 text-start pe-4 resume-block">
+                    <div class="wrap" style="letter-spacing: 2px; width: auto">Образование</div>
+                    <div class="pt-2 pt-sm-0" style="width: 60%;">
+                        <div style="width: 100%; height: 55%; border-bottom: #e2e2e2 solid 2px"></div>
+                    </div>
+                </div>
+
+                {% for university in education %}
+                    <div class="row d-flex mb-5 pe-4 resume-block">
+                        <div class="row">
+                            <div class="col-2 bottom-100">
+                                <div class="m-auto d-none d-sm-block" style="width:30px; height: 30px; border: #c29d6a solid 6px;"></div>
+                            </div>
+                            <div class="col-10">
+                                <div style="line-height: 100%; letter-spacing: 1px;" class="resume-education-title text-start">
+                                    <a class="text-decoration-none" style="line-height: normal" href="{{ university.website }}" target="_blank">
+                                        {{ university.name }}
+                                    </a>
+                                </div>
+                                <div class="resume-education-faculty mt-2 text-start">{{ university.specialization }}</div>
+                                <div class="resume-block-period mt-2">{{ university.period }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                <div class="row pt-5 mb-5 ps-5 text-start pe-4 resume-block">
+                    <div class="wrap" style="letter-spacing: 2px; width: auto">Другой опыт</div>
+                    <div class="pt-2 pt-sm-0" style="width: 60%;">
+                        <div style="width: 100%; height: 55%; border-bottom: #e2e2e2 solid 2px"></div>
+                    </div>
+                </div>
+
+                {% for internship in internships %}
+                    <div class="row d-flex mb-5 pe-4 resume-block">
+                        <div class="row">
+                            <div class="col-2 bottom-100">
+                                <div class="m-auto d-none d-sm-block" style="width:30px; height: 30px; border: #c29d6a solid 6px;"></div>
+                            </div>
+                            <div class="col-10">
+                                <div style="line-height: 100%; letter-spacing: 1px;" class="resume-block-title">{{ internship.name }}</div>
+                                {% if internship.website != '/' %}
+                                    <div class="resume-block-company mt-2 text-start"><a class="text-decoration-none" href="{{ internship.website }}" target="_blank">{{ internship.company }}</a></div>
+                                {% else %}
+                                    <div class="resume-block-company mt-2 text-start" style="color: #9a9a9a; font-size: 22px; font-weight: 500;">{{ internship.company }}</div>
+                                {% endif %}
+                                <div class="resume-block-period mt-2">{{ internship.period }}</div>
+                                <div class="resume-block-content mt-3">{{ internship.content }}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <div class="col-lg-3 d-none d-lg-block text-center">
+            <div class="row white-block p-4">
+                <div style="font-size: 20px; font-weight: 500; color: #c29d6a;">Основная информация</div>
+                <div class="fw-bold mt-3">ФИО</div>
+                <div class="fw-light mt-1">Крючков Илья Андреевич</div>
+                <div class="fw-bold mt-3">Желаемая должность:</div>
+                <div class="fw-light mt-1">Python Backend Developer;</div>
+                <div class="fw-light mt-1">FLutter Developer;</div>
+                <div class="fw-light mt-1">Web Frontend Developer;</div>
+                <div class="fw-bold mt-4">Дата рождения</div>
+                <div class="fw-light mt-1">25 декабря 2001 г.</div>
+                <div class="fw-bold mt-4">Место проживания</div>
+                <div class="fw-light mt-1">Россия, г. Москва, Ленинский проспект, д. 156</div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
