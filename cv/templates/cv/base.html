@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'cv/css/bootstrap.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'cv/css/main.css' %}">
+    <link rel="stylesheet" id="theme" type="text/css" href="{% static 'cv/css/main.css' %}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
@@ -74,6 +75,9 @@
         </header>
 
 	<div style="position: fixed; top: -234px; right: 30px; height: 288px; width: 175px; z-index: 985; background-color: #f9f9f9;"></div>
+        <div class="d-flex">
+            <button onclick="changeThemeToDark()">Change Theme</button>
+        </div>
         <div class="col-12">
             <div class="container px-4">
                 {% block content %}{% endblock content %}
@@ -90,3 +94,5 @@
     <script src="{% static 'cv/js/main.js' %}"></script>
 </body>
 </html>
+
+

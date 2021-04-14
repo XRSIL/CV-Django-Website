@@ -23,3 +23,8 @@ function myFunction() {
     var element = document.getElementById("nav_toggle");
   }
 }
+
+function changeThemeToDark() {
+  document.getElementsByTagName("link")[1].setAttribute("href", "{% static 'cv/css/main.css' %}");
+
+}
