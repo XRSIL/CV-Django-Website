@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'cv.apps.CvConfig',
     'crispy_forms',
-    'dark',
+    'rest_framework',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',

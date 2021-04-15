@@ -1,3 +1,17 @@
+
+// Functions for toggling themes
+document.getElementsByTagName("link")[1].setAttribute("href", "static/cv/css/main.css");
+
+function changeThemeToDark() {
+  document.getElementsByTagName("link")[2].setAttribute("href", "static/cv/css/dark.css");
+}
+
+function changeThemeToLight() {
+  document.getElementsByTagName("link")[2].setAttribute("href", "");
+}
+
+
+
 function getWidth() {
   if (self.innerWidth) {
     return self.innerWidth;
@@ -24,7 +38,3 @@ function myFunction() {
   }
 }
 
-function changeThemeToDark() {
-  document.getElementsByTagName("link")[1].setAttribute("href", "{% static 'cv/css/main.css' %}");
-
-}

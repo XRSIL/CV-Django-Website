@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class IsTheme(models.Model):
+    is_changed = models.Value('')
+
 
 class ResumeJob(models.Model):
     title = models.CharField(max_length=250)
